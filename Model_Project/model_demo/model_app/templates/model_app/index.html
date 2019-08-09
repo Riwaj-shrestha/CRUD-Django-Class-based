@@ -1,0 +1,71 @@
+{% extends 'model_app/base.html' %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+                <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700;">Book Lists</h2>
+        </div>
+        <div class="col-md-3">
+            <h4 style="font-family: 'Poppins', sans-serif; font-weight: 600; display: inline;">Add New Book: </h4>
+                <a href="{% url 'create' %}">
+                        <button type="button" class="btn btn-success">
+                          <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                      </a>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="row">
+           
+            {% for book in book_list %}
+            <ul class="list-group">
+                <li class="list-group-item " style="overflow: auto; display: flex; align-items: center;">
+                        <div class="col-md-6">
+                             <a href="{% url 'detail' book.pk %}">{{ book.title }}</a>  <span class="badge"></span>
+                
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                    <div class="col-md-4">
+                                            Open Detail: <a href="{% url 'detail' book.pk %}">
+                                                    <button type="button" class="btn btn-info">
+                                                            <span class="glyphicon glyphicon-open"></span>
+                                                           </button>
+                                                  </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                           Edit: <a href="">
+                                                    <button type="button" class="btn btn-info">
+                                                      <span class="glyphicon glyphicon-pencil"></span>
+                                                    </button>
+                                                  </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                            Delete: <a href="">
+                                                    <button type="button" class="btn btn-danger">
+                                                            <span class="glyphicon glyphicon-trash"></span>
+                                                           </button>
+                                                  </a>
+                                    </div>
+                            </div>
+                        </div>
+                       
+                    </li> 
+            </ul>
+            {% endfor %}
+        </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+{% endblock %}
