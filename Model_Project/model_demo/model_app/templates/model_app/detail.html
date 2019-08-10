@@ -11,27 +11,15 @@
         <h2 style="font-family: 'Poppins', sans-serif; font-weight: 700;">
             Book Title: " {{ book.title }} "
         </h2>
+        <h4 style="font-family: 'Poppins', sans-serif; font-weight: 600;"> Rate of book: {{ book.rate }}</h4>
+        
+        <h5 style="font-family: 'Poppins', sans-serif; font-weight: 500;">Quantity of book: {{ book.quantity }}</h5>
+
     </div>
     <div class="col-md-1 col-xs-1 col-sm-1">
 
     </div>
 </div>
-<div class="row">
-    <div class="col-md-1 col-xs-1 col-sm-1"></div>
-    <div class="col-md-10 col-xs-10 col-sm-10">
-       <h4 style="font-family: 'Poppins', sans-serif; font-weight: 600;"> Rate of book: {{ book.rate }}</h4>
-    </div>
-    <div class="col-md-1 col-xs-1 col-sm-1"></div>
-</div>
-
-<div class="row">
-        <div class="col-md-1 col-xs-1 col-sm-1"></div>
-        <div class="col-md-10 col-xs-10 col-sm-10">
-           <h5 style="font-family: 'Poppins', sans-serif; font-weight: 500;">Quantity of book: {{ book.quantity }}</h5>
-        </div>
-        <div class="col-md-1 col-xs-1 col-sm-1"></div>
-    </div>
-
     <div class="row">
         <div class="col-md-1 col-xs-1 col-sm-1"></div>
         <div class="col-md-10 col-xs-10 col-sm-10">
@@ -39,19 +27,22 @@
         </div>
         <div class="col-md-1 col-xs-1 col-sm-1"></div>
     </div>
-    <br>
-    <div class="row" style="padding-left: 10vw;">
-            Edit: <a href="{% url 'update' object.pk %}">
-                     <button type="button" class="btn btn-info">
-                       <span class="glyphicon glyphicon-pencil"></span>
-                     </button>
-                   </a>
-             Delete: <a href="{% url 'delete' object.pk %}">
-                     <button type="button" class="btn btn-danger">
-                             <span class="glyphicon glyphicon-trash"></span>
-                            </button>
-                   </a>
-     
+<br>
+    <div class="row">
+        <div class="col-md-1 col-xs-1 col-sm-1"></div>
+        <div class="col-md-10 col-xs-10 col-sm-10">
+            <a href="{% url 'update' object.pk %}">
+                <button type="button" class="btn btn-info">
+                <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+            </a>
+            <a href="{% url 'delete' object.pk %}">
+                <button type="button" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </a>        
+        </div>
+        <div class="col-md-1 col-xs-1 col-sm-1"></div>
     </div>
 </div>
 {% endblock %}
