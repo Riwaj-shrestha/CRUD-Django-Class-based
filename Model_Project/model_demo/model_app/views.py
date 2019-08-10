@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from model_app.models import Books
-from django.views.generic import ListView, DetailView, CreateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 
 
 class IndexView(ListView):
@@ -24,4 +24,8 @@ class BookCreateView(CreateView):
 
 class BookDeleteView(DeleteView):
     model = Books
-    success_url = reverse_lazy('book')
+    success_url = '/'
+
+class BookUpdateView(UpdateView):
+    model = Books
+    fields = ['title','rate', 'quantity']

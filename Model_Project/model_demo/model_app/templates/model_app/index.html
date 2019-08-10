@@ -43,14 +43,14 @@
                                                   </a>
                                     </div>
                                     <div class="col-md-4">
-                                           Edit: <a href="">
+                                           Edit: <a href="{% url 'update' book.pk %}">
                                                     <button type="button" class="btn btn-info">
                                                       <span class="glyphicon glyphicon-pencil"></span>
                                                     </button>
                                                   </a>
                                     </div>
                                     <div class="col-md-4">
-                                            Delete: <a href="">
+                                            Delete: <a href="{% url 'delete' book.pk %}">
                                                     <button type="button" class="btn btn-danger">
                                                             <span class="glyphicon glyphicon-trash"></span>
                                                            </button>

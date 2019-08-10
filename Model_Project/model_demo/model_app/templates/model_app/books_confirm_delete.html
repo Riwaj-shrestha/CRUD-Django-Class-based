@@ -1,0 +1,33 @@
+{% extends 'model_app/base.html' %}
+{% block content %}
+<div class="row"><br></div>
+
+
+
+<div class="row">
+
+        <div class="col-md-1"></div>
+        <div class="col-md-5" style="background-color:cornsilk; padding: 5vh;">
+            <div class="row">
+
+<div class="col-md-1"></div>
+<div class="col-md-10"><h2 style="font-family: 'Poppins', sans-serif; font-weight: 700;">Add New Book</h2></div>
+<div class="col-md-1"></div>
+
+</div>
+            <form method="post">
+                {% csrf_token %}
+                <h2>Are you sure want to delete the book "{{ object.title }}"?</h2>
+                <br>
+                <button type="submit" class="btn btn-danger" >Delete</button> 
+                <a href="{% url 'detail' object.pk %}" class="btn btn-info" >Cancel</a>
+            </form> 
+        </div>
+        <div class="col-md-5"></div>
+        <div class="col-md-1"></div>
+        
+        </div>
+
+           
+
+{% endblock %}
